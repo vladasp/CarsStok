@@ -1,0 +1,23 @@
+﻿@model CarsStok.Models.RentalHistory
+
+@{
+    ViewBag.Title = "Update item";
+    @Styles.Render("~/Content/text.css");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Updating entry</h2>
+    @{
+        var item = new CarsStok.Models.RentalHistory();
+    }
+    @using (Html.BeginForm("UpdateComplete", "Creating"))
+    {
+        <b>Client name  </b><br /> @Html.TextBox("Data", Model.Client_name) <br />
+        <b>Cars model   </b><br /> @Html.TextBox("Data", Model.Cars_model) <br />
+        <b>Rental period</b><br /> @Html.TextBox("Data", Model.Rental_period) <br />
+        <b>Id</b> @Html.Label("Data", Model.Id.ToString())
+        @Html.Hidden("Data", Model.Id.ToString())
+        <br />
+        <input type="submit" value="Insert" />
+    }
+
